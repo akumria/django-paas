@@ -81,10 +81,17 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = ''
-if not len(SECRET_KEY):
-    from django.core.exceptions import ImproperlyConfigured
-    raise ImproperlyConfigured("Please set a secret key.")
+try:
+    from secret import SECRET_KEY
+    if not len(SECRET_KEY):
+        from django.core.exceptions import ImproperlyConfigured
+        raise ImproperlyConfigured("Please set a secret key.")
+except ImportError:
+    import sys
+    print "Please create secret.py and specify a SECRET_KEY within."
+    sys.exit(1)
+    
+
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
