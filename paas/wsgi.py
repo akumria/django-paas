@@ -15,7 +15,8 @@ framework.
 """
 import os
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "paas.settings")
+PROJECT = os.path.basename(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', )))
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", ("%s.settings" % PROJECT))
 
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION

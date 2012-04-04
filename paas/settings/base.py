@@ -1,4 +1,6 @@
 # Django settings for paas project.
+import os
+PROJECT = os.path.basename(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', )))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -110,10 +112,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'paas.urls'
+ROOT_URLCONF = '%s.urls' % PROJECT
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'paas.wsgi.application'
+WSGI_APPLICATION = '%s.wsgi.application' % PROJECT
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
