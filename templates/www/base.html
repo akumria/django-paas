@@ -1,0 +1,38 @@
+{% extends "template.html" %}
+{% load staticfiles %}
+
+{% block header %}
+<div id="topbar">
+	<div id="login">
+		{% comment %}
+		<!-- if you have enabled authentication, this becomes handy -->
+		{% if user.is_authenticated %}
+		<p>Welcome to MyProject! {{ user.email }}. <a href="{% url django.contrib.auth.views.logout %}">Sign out</a></p>
+		{% else %}
+		{% block loginlink %}
+		<p><a href="{% url django.contrib.auth.views.login %}?next={% firstof request.POST.next request.GET.next request.path %}">Sign in</a></p>
+		{% endblock loginlink %}
+		{% endif %}
+		{% endcomment %}
+	</div>
+
+	<div id="logo">
+		<a href="/" title="MyProject home"><img src="{% static "img/myproject-logo.png" %}" alt="MyProject" /></a>
+	</div>
+</div>
+
+{% block nav %}
+<nav>
+<ul>
+	<li><a href="/">Home</a></li>
+</ul>
+</nav>
+{% block subnav %}
+{% endblock subnav %}
+{% endblock nav %}
+
+{% endblock header %}
+
+{% block footer %}
+<p>MyProject is Copyright 2011.</p>
+{% endblock footer %}

@@ -1,0 +1,53 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}MyProject{% endblock %}</title>
+		{% if metadescription %}
+		<meta name="description" content="{% block metadescription %}{% endblock metadescription %}" />
+		{% endif %}
+		{% if metakeywords %}
+		<meta name="keywords" content="{% block metakeywords %}{% endblock metakeywords %}" />
+		{% endif %}
+		<link rel="stylesheet" href="{% static "css/default.css" %}"/>
+		<link rel="shortcut icon" href="{% static "img/icon.png" %}"/>
+		{% block headstyle %}{% endblock headstyle %}
+		{% block headjs %}{% endblock headjs %}
+		{% block headextra %}{% endblock headextra %}
+	</head>
+	<body class={% block bodyclass %}{% endblock bodyclass %}">
+		{% block bodytop %}{% endblock bodytop %}
+
+		<div id="header">
+			<header>
+			{% block header %}{% endblock %}
+			</header>
+		</div>
+
+		{% if messages %}
+		<div id="messages">
+			<ul class="messages">
+				{% for message in messages %}
+				<li {% if message.tags %}class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+				{% endfor %}
+			</ul>
+		</div>
+		{% endif %}
+
+		<div id="content-bg">
+		<div id="content">
+			{% block content %}
+			{% endblock %}
+		</div>
+		</div>
+
+		<div id="footer">
+			<footer>
+			{% block footer %}{% endblock %}
+			</footer>
+		</div>
+
+		{% block bodybottom %}{% endblock bodybottom %}
+		{% block bodyjs %}{% endblock bodyjs %}
+	</body>
+</html>
