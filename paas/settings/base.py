@@ -95,8 +95,8 @@ try:
 except ImportError:
     import sys
     print "Please create secret.py and specify a SECRET_KEY within."
-    sys.exit(1)
-    
+    print " manage.py gensecretkey"
+    print "Will do this."
 
 
 # List of callables that know how to import templates from various sources.
