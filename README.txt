@@ -1,13 +1,26 @@
+Django PaaS - Django on Platform as a Service (PaaS) providers
 
-change
-	mv paas to <myproject>
+This is a minimal Django project to allow you to easily get setup on
+various PaaS providers.
 
-	OPTIONAL:
-	So long as the environment variable 'DJANGO_SETTINGS_MODULE' is set, not required.
+Currently there is support for:
+	- None
 
-	edit manage.py
-		- DJANGO_SETTINGS_MODULE and change 'paas' to <myproject>
+Initial (local) install.
+	- clone this project
+	- setup your virtual environment
+	- run ./manage.py gensecretkey
+		- this will output 'Please create secret.py and specify a SECRET_KEY within.' but this is OK
+	- git mv paas to <myproject>
+	- edit manage.py
+		- change 'paas.settings' to '<myproject>.settings'
+	- edit <myproject>/settings/base.py
+		- specify appropriate value for ADMINS=
 
-	create <myproject>/settings/secret.py:
-		SECRET_KEY = ''
-	Some long value
+You will now have a local installation, using sqllite where you can add 
+additional applications and test things locally.
+
+Deploying to a PaaS 
+	- create a deployment environment file (e.g. paas/settings/staging.py)
+		- specify your DB
+		- specify your environment ADMINS=
