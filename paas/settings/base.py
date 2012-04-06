@@ -1,4 +1,4 @@
-# Django settings for paas project.
+# Django settings for the project.
 import os
 PROJECT = os.path.basename(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', )))
 PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..',))
