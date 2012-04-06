@@ -20,6 +20,11 @@ Initial (local) install.
 You will now have a local installation, using sqllite where you can add 
 additional applications and test things locally.
 
+	- run things!
+		- ./manage.py syncdb
+		- ./manage.py migrate
+		- ./manage.py runserver
+
 Deploying to a PaaS 
 	- create a deployment environment file (e.g. paas/settings/staging.py)
 		- specify your DB
