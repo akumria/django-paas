@@ -17,14 +17,14 @@
 	</div>
 
 	<div id="logo">
-		<a href="/" title="MyProject home"><img src="{% static "img/myproject-logo.png" %}" alt="MyProject" /></a>
+			<a href="{% url home %}" title="MyProject home"><img src="{% static "img/myproject-logo.png" %}" alt="MyProject" /></a>
 	</div>
 </div>
 
 {% block nav %}
 <nav>
 <ul>
-	<li><a href="/">Home</a></li>
+		<li><a href="{% url home %}">Home</a></li>
 </ul>
 </nav>
 {% block subnav %}
