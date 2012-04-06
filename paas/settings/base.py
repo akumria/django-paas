@@ -153,6 +153,10 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 
+    # external third-party apps
+    'south',
+
+    # our apps
     'world',
 )
 
