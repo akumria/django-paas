@@ -8,7 +8,12 @@ Currently there is support for:
 
 Initial (local) install.
 	- clone this project
-	- setup your virtual environment
+	- setup your virtual environment (one time)
+		- virtualenv --no-site-packages env
+		- virtualenv --relocatable env
+		- source env/bin/activate
+	- install dependancies
+		- pip install -r requirements.pip
 	- run ./manage.py gensecretkey
 		- this will output 'Please create secret.py and specify a SECRET_KEY within.' but this is OK
 	- git mv paas to <myproject>
