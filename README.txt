@@ -19,16 +19,24 @@ Initial (local) install.
 	- install dependancies
 		- (env)$ pip install -r requirements.txt
 
-	- generate a secret key
+	- generate a secret key and save it
 		- (env)$ ./manage.py gensecretkey
 		- this will output 'Please create secret.py and specify a SECRET_KEY within.' but this is OK
+		- (env)$ git add pass/settings/secret.py
+		- (env)$ git commit -m "Generated secret key"
 
 	- rename the project
-		- git mv paas to <myproject>
+		- (env)$ git mv paas to <myproject>
+
 		- edit manage.py
 			- change 'paas.settings' to '<myproject>.settings'
+			- (env)$ git add manage.py
+
 		- edit <myproject>/settings/base.py
 			- specify appropriate value for ADMINS=
+			- (env)$ git add .
+
+		- (env)$ git commit -m "Updated to name to be <myproject>"
 
 You will now have a local installation, using sqllite where you can add 
 additional applications and test things locally.
