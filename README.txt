@@ -8,19 +8,26 @@ Currently there is support for:
 
 Initial (local) install.
 	- clone this project
+		- git clone https://github.com/akumria/django-paas
+
 	- setup your virtual environment (one time)
 		- virtualenv --no-site-packages env
 		- virtualenv --relocatable env
 		- source env/bin/activate
+
 	- install dependancies
 		- pip install -r requirements.pip
-	- run ./manage.py gensecretkey
+
+	- generate a secret key
+		- run ./manage.py gensecretkey
 		- this will output 'Please create secret.py and specify a SECRET_KEY within.' but this is OK
-	- git mv paas to <myproject>
-	- edit manage.py
-		- change 'paas.settings' to '<myproject>.settings'
-	- edit <myproject>/settings/base.py
-		- specify appropriate value for ADMINS=
+
+	- rename the project
+		- git mv paas to <myproject>
+		- edit manage.py
+			- change 'paas.settings' to '<myproject>.settings'
+		- edit <myproject>/settings/base.py
+			- specify appropriate value for ADMINS=
 
 You will now have a local installation, using sqllite where you can add 
 additional applications and test things locally.
