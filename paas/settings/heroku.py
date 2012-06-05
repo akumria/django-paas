@@ -23,3 +23,5 @@ try:
     }
 except KeyError:
     pass
+
+INSTALLED_APPS += ('gunicorn', )
