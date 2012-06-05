@@ -9,14 +9,17 @@ import urlparse
 urlparse.uses_netloc.append('postgres')
 
 # Grab database info
-db_url = urlparse.urlparse(os.environ['DATABASE_URL'])
-DATABASES = {
-    'default': {
-        'ENGINE':  'django.db.backends.postgresql_psycopg2',
-        'NAME':     db_url.path[1:],
-        'USER':     db_url.username,
-        'PASSWORD': db_url.password,
-        'HOST':     db_url.hostname,
-        'PORT':     db_url.port,
+try:
+    db_url = urlparse.urlparse(os.environ['DATABASE_URL'])
+    DATABASES = {
+        'default': {
+            'ENGINE':  'django.db.backends.postgresql_psycopg2',
+            'NAME':     db_url.path[1:],
+            'USER':     db_url.username,
+            'PASSWORD': db_url.password,
+            'HOST':     db_url.hostname,
+            'PORT':     db_url.port,
+        }
     }
-}
+except KeyError:
+    pass
