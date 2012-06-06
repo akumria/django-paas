@@ -91,8 +91,11 @@ Deploying to Heroku
 
 6. Export the Django settings (locally and remotely)
 
-        (env)$ export DJANGO_SETTINGS_MODULE=paas.settings.heroku  # change to <myproject> if you have renamed as above
-        (env)$ heroku config:add DJANGO_SETTINGS_MODULE=paas.settings.heroku # likewise change to <myproject>
+        (env)$ export DJANGO_SETTINGS_MODULE=paas.settings.heroku
+    - change to <myproject> if you have renamed as above
+
+        (env)$ heroku config:add DJANGO_SETTINGS_MODULE=paas.settings.heroku
+    - likewise change to <myproject>
 
 7. Add a remote Heroku database and perform setup
 
