@@ -1,10 +1,12 @@
 Django PaaS - Django on Platform as a Service (PaaS) providers
+==============================================================
 
 This is a minimal Django project to allow you to easily get setup on
 various PaaS providers.
 
 Currently there is support for:
-	- Heroku
+
+* Heroku
 
 Initial (local) install.
 ------------------------
