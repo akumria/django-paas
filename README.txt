@@ -57,26 +57,31 @@ Deploying to Heroku
 	- enter your email address
 	- check you email and confirm your account
 
-2. Login
+2. Install the Heroku toolbelt.
+
+	- visit https://toolbelt.heroku.com/
+	- follow the instructions to install on screen
+
+3. Login
 
 	- (env)$ heroku login
 
-3. Create the remote Heroku stack
+4. Create the remote Heroku stack
 
 	- (env)$ heroku create --stack cedar
 	- Note down the URL generated, this is where your app will live (for now)
 
-4. Upload the code remotely
+5. Upload the code remotely
 
 	- (env)$ git push heroku master
 	- Note this will take a while
 
-5. Export the Django settings (locally and remotely)
+6. Export the Django settings (locally and remotely)
 
 	- (env)$ export DJANGO_SETTINGS_MODULE=paas.settings.heroku  # change to <myproject> if you have renamed as above
 	- (env)$ heroku config:add DJANGO_SETTINGS_MODULE=paas.settings.heroku # likewise change to <myproject>
 
-6. Add a remote Heroku database and perform setup
+7. Add a remote Heroku database and perform setup
 
 	- (env)$ heroku addons:add heroku-postgresql:dev
 	- Note the line 'Attached as HEROKU_POSTGRESQL_FOO'  # note it is unlikely to be FOO
@@ -84,7 +89,7 @@ Deploying to Heroku
 	- (env)$ heroku run python manage.py syncdb
 	- (env)$ heroku run python manage.py migrate
 
-7. Visit your site
+8. Visit your site
 
 	- (env)$ heroku open
 
